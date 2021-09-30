@@ -25,5 +25,5 @@ jobs:
       - name: Run production 
         run: dotnet run --project src > output.txt
       - name: Verify production 
-        run: diff -y --suppress-common-lines -Z -b -B -a --context=1 -y expected.txt output.txt 
+        run: diff --context=1 -y expected.txt output.txt 
 
