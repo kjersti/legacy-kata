@@ -22,3 +22,8 @@ jobs:
         run: dotnet build --configuration Release --no-restore
       - name: Test
         run: dotnet test --no-restore --verbosity normal
+      - name: Run production 
+        run: dotnet run --project src > output.txt
+      - name: Verify production 
+        run: cmp --silent expected.txt output.txt || echo "files are different"; exit 1
+
