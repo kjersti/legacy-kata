@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace GildedRoseKata
 {
@@ -7,7 +8,7 @@ namespace GildedRoseKata
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("OMGHAI!");
+            Console.WriteLine("OMGHAI!", Encoding.UTF8);
 
             IList<Item> Items = new List<Item>{
                 new Item {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20},
@@ -42,13 +43,13 @@ namespace GildedRoseKata
 
             for (var i = 0; i < 31; i++)
             {
-                Console.WriteLine("-------- day " + i + " --------");
-                Console.WriteLine("name, sellIn, quality");
+                Console.WriteLine("-------- day " + i + " --------", Encoding.UTF8);
+                Console.WriteLine("name, sellIn, quality", Encoding.UTF8);
                 for (var j = 0; j < Items.Count; j++)
                 {
-                    System.Console.WriteLine(Items[j].Name + ", " + Items[j].SellIn + ", " + Items[j].Quality);
+                    System.Console.WriteLine(Items[j].Name + ", " + Items[j].SellIn + ", " + Items[j].Quality, Encoding.UTF8);
                 }
-                Console.WriteLine("");
+                Console.WriteLine("", Encoding.UTF8);
                 app.UpdateQuality();
             }
         }
