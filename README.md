@@ -4,6 +4,8 @@ You are a new member of a small team developing software that handles a weird sh
 
 The main program will list out the inventory of today, and the calculated sell in days and quality for the next 31 days. 
 
+There is a requirements documents listed [here](requirements.md). This is where you'll find the documentation of the current system, and also the new features the team is tasked to implement. 
+
 
 ## Credits
 
