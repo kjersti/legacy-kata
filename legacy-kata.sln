@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GildedRose", "src\GildedRos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "tests\tests.csproj", "{1600251C-3815-490C-8006-C6EADEAC4CA7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "verify-prod", "verify-prod\verify-prod.csproj", "{460C2013-815C-4104-AC92-76587FE0DD72}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{1600251C-3815-490C-8006-C6EADEAC4CA7}.Release|x64.Build.0 = Release|Any CPU
 		{1600251C-3815-490C-8006-C6EADEAC4CA7}.Release|x86.ActiveCfg = Release|Any CPU
 		{1600251C-3815-490C-8006-C6EADEAC4CA7}.Release|x86.Build.0 = Release|Any CPU
+		{460C2013-815C-4104-AC92-76587FE0DD72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{460C2013-815C-4104-AC92-76587FE0DD72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{460C2013-815C-4104-AC92-76587FE0DD72}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{460C2013-815C-4104-AC92-76587FE0DD72}.Debug|x64.Build.0 = Debug|Any CPU
+		{460C2013-815C-4104-AC92-76587FE0DD72}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{460C2013-815C-4104-AC92-76587FE0DD72}.Debug|x86.Build.0 = Debug|Any CPU
+		{460C2013-815C-4104-AC92-76587FE0DD72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{460C2013-815C-4104-AC92-76587FE0DD72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{460C2013-815C-4104-AC92-76587FE0DD72}.Release|x64.ActiveCfg = Release|Any CPU
+		{460C2013-815C-4104-AC92-76587FE0DD72}.Release|x64.Build.0 = Release|Any CPU
+		{460C2013-815C-4104-AC92-76587FE0DD72}.Release|x86.ActiveCfg = Release|Any CPU
+		{460C2013-815C-4104-AC92-76587FE0DD72}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

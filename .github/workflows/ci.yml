@@ -24,10 +24,6 @@ jobs:
         run: dotnet test --no-restore --verbosity normal
       - name: Run production 
         run: dotnet run --project src > output.txt 
-      - name: Run production 2
-        run: cat expected.txt
-      - name: Verify production 1
-        run: diff <(cat expected.txt) <(dotnet run --project src)
       - name: Verify production 
-        run: diff expected.txt output.txt 
+        run: dotnet run --project verify-prod
 
