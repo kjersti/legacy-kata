@@ -26,6 +26,8 @@ jobs:
         run: dotnet run --project src > output.txt 
       - name: Run production 2
         run: cat output.txt 
+      - name: Verify production 1
+        run: diff <(cat expected.txt) <(dotnet run --project src)
       - name: Verify production 
         run: diff expected.txt output.txt 
 
