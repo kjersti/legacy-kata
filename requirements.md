@@ -24,9 +24,16 @@ Pretty simple, right? Well this is where it gets interesting:
 	Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but
 	Quality drops to 0 after the concert
 
-We have recently signed a supplier of conjured items. This requires an update to our system:
+We have recently recieved several new suppliers, and some updates from existing suppliers, and we need to do some changes to the system. Leeroy did start on adding the new items, but he wasn't able to finish it all before he had to leave on adventure. 
 
+1. We have recently signed a supplier of conjured items. This requires an update to our system:
 	- "Conjured" items degrade in Quality twice as fast as normal items
+2. We have also recieved word from the concert venue, that they want to sell regular tickets as well as the backstage passes, so for every backstage pass currently registered, we need regular tickets as well. 
+	The regular tickets' quality drops to 0 after the concert, and increases by 1 every day until then. 
+3. We want to automatically the tickets from the inventory after the concert has been held.
+4. The producer of the Elixir of the Mongoose has also released the Greater Shadow Protection Potion. The quality drops by 1 every other day, it's so good! 
+5. It would be nice if we could possibly be able to see the state of our inventory two months ahead, instead of the one month restriction we have today. 
+
 
 Feel free to make any changes to the UpdateQuality method and add any new code as long as everything
 still works correctly. However, do not alter the Item class or Items property as those belong to the
