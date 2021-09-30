@@ -25,5 +25,5 @@ jobs:
       - name: Run production 
         run: dotnet run --project src > output.txt
       - name: Verify production 
-        run: cmp --silent expected.txt output.txt || echo "files are different"; exit 1
+        run: cmp --verbose expected.txt output.txt || echo "files are different"; exit 1
 
