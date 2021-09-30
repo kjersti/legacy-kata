@@ -20,9 +20,9 @@ namespace verify_prod
             else
             {
                 Console.WriteLine("Expected:");
-                Console.Write(string.Join(',', expected));
+                Console.Write(string.Join('\n', expected));
                 Console.WriteLine("Was:");
-                Console.Write(string.Join(',', output));
+                Console.Write(string.Join('\n', output));
                 return 1;
             }
         }
