@@ -37,7 +37,7 @@ namespace tests
             Assert.Equal(20, items.First().Quality);
             gildedRose.UpdateQuality();
             gildedRose.UpdateQuality();
-            Assert.Equal(0, items.First().Quality);
+            Assert.Equal(0, items.Count);
         }
 
     }
