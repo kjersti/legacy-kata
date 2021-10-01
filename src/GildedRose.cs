@@ -14,11 +14,15 @@ namespace GildedRoseKata
 
         public void UpdateQuality()
         {
+            var itemsToRemove = new List<Item>();
+            
             for (var i = 0; i < Items.Count; i++)
             {
                 if (ConjuredEnabled && Items[i].Name == "Conjured Mana Cake")
                 {
-                    Items[i].Quality = Math.Max(0, Items[i].Quality - 2);
+                    Items[i].Quality = Math.Max(0, Items[i].Quality - (Items[i].SellIn < 0 ? 4 : 2));
+                    Items[i].SellIn = Items[i].SellIn - 1;
+                    continue;
                 }
                 else if (Items[i].Name != "Aged Brie" && Items[i].Name != "Backstage passes to a TAFKAL80ETC concert" && Items[i].Name != "Regular ticket to a TAFKAL80ETC concert")
                 {
@@ -85,6 +89,11 @@ namespace GildedRoseKata
                         {
                             Items[i].Quality = Items[i].Quality - Items[i].Quality;
                         }
+
+                        if (Items[i].Name is "Regular ticket to a TAFKAL80ETC concert" or "Backstage passes to a TAFKAL80ETC concert")
+                        {
+                            itemsToRemove.Add(Items[i]);
+                        }   
                     }
                     else
                     {
@@ -94,6 +103,11 @@ namespace GildedRoseKata
                         }
                     }
                 }
+            }
+
+            foreach (var item in itemsToRemove)
+            {
+                Items.Remove(item);
             }
         }
     }
