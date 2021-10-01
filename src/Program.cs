@@ -64,7 +64,7 @@ namespace GildedRoseKata
             var app = new GildedRose(Items);
 
 
-            for (var i = 0; i < 60; i++)
+            for (var i = 0; i < 61; i++)
             {
                 Console.WriteLine("-------- day " + i + " --------");
                 Console.WriteLine("name, sellIn, quality");
