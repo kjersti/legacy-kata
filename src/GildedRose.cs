@@ -5,7 +5,7 @@ namespace GildedRoseKata
 {
     public class GildedRose
     {
-        public bool ConjuredEnabled = false;
+        public bool ConjuredEnabled = true;
         IList<Item> Items;
         public GildedRose(IList<Item> Items)
         {
