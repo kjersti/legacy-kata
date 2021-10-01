@@ -85,7 +85,7 @@ namespace GildedRoseKata
                             Items[i].Quality = Items[i].Quality - Items[i].Quality;
                         }
 
-                        if (Items[i].Name == "Regular ticket to a TAFKAL80ETC concert" || Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
+                        if (Items[i].Name is "Regular ticket to a TAFKAL80ETC concert" or "Backstage passes to a TAFKAL80ETC concert")
                         {
                             itemsToRemove.Add(Items[i]);
                         }   
