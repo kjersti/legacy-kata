@@ -18,14 +18,13 @@ namespace tests
                 }
             };
             var gildedRose = new GildedRose(items);
-            gildedRose.ConjuredEnabled = true;
             Assert.Equal(20, items.First().Quality);
             gildedRose.UpdateQuality();
             Assert.Equal(21, items.First().Quality);
         }
 
         [Fact]
-        public void QualityShouldBeZeroWhenSellInTest()
+        public void QualityShouldBeZeroWhenSellInZeroTest()
         {
             IList<Item> items = new List<Item>{
 				new Item {
@@ -35,7 +34,6 @@ namespace tests
                 }
             };
             var gildedRose = new GildedRose(items);
-            gildedRose.ConjuredEnabled = true;
             Assert.Equal(20, items.First().Quality);
             gildedRose.UpdateQuality();
             gildedRose.UpdateQuality();
