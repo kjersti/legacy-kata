@@ -5,110 +5,83 @@ namespace GildedRoseKata
 {
     public class GildedRose
     {
+        private readonly IList<Item> _items;
         public bool ConjuredEnabled = false;
-        IList<Item> Items;
-        public GildedRose(IList<Item> Items)
+
+        public GildedRose(IList<Item> items)
         {
-            this.Items = Items;
+            _items = items;
         }
 
         public void UpdateQuality()
         {
             var itemsToRemove = new List<Item>();
-            
-            for (var i = 0; i < Items.Count; i++)
+
+            foreach (var t in _items)
             {
-                if (ConjuredEnabled && Items[i].Name == "Conjured Mana Cake")
+                if (ConjuredEnabled && t.Name == "Conjured Mana Cake")
                 {
-                    Items[i].Quality = Math.Max(0, Items[i].Quality - (Items[i].SellIn < 0 ? 4 : 2));
-                    Items[i].SellIn = Items[i].SellIn - 1;
+                    t.Quality = Math.Max(0, t.Quality - (t.SellIn < 0 ? 4 : 2));
+                    t.SellIn = t.SellIn - 1;
                     continue;
                 }
-                else if (Items[i].Name != "Aged Brie" && Items[i].Name != "Backstage passes to a TAFKAL80ETC concert" && Items[i].Name != "Regular ticket to a TAFKAL80ETC concert")
+
+                if (t.Name != "Aged Brie" && t.Name != "Backstage passes to a TAFKAL80ETC concert" &&
+                    t.Name != "Regular ticket to a TAFKAL80ETC concert")
                 {
-                    if (Items[i].Quality > 0)
-                    {
-                        if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-                        {
-                            Items[i].Quality = Items[i].Quality - 1;
-                        }
-                    }
+                    if (t.Quality > 0)
+                        if (t.Name != "Sulfuras, Hand of Ragnaros")
+                            t.Quality = t.Quality - 1;
                 }
                 else
                 {
-                    if (Items[i].Quality < 50)
+                    if (t.Quality < 50)
                     {
-                        Items[i].Quality = Items[i].Quality + 1;
+                        t.Quality = t.Quality + 1;
 
-                        if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
+                        if (t.Name == "Backstage passes to a TAFKAL80ETC concert")
                         {
-                            if (Items[i].SellIn < 11)
-                            {
-                                if (Items[i].Quality < 50)
-                                {
-                                    Items[i].Quality = Items[i].Quality + 1;
-                                }
-                            }
+                            if (t.SellIn < 11)
+                                if (t.Quality < 50)
+                                    t.Quality = t.Quality + 1;
 
-                            if (Items[i].SellIn < 6)
-                            {
-                                if (Items[i].Quality < 50)
-                                {
-                                    Items[i].Quality = Items[i].Quality + 1;
-                                }
-                            }
+                            if (t.SellIn < 6)
+                                if (t.Quality < 50)
+                                    t.Quality = t.Quality + 1;
                         }
                     }
                 }
 
-                if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-                {
-                    Items[i].SellIn = Items[i].SellIn - 1;
-                }
+                if (t.Name != "Sulfuras, Hand of Ragnaros") t.SellIn = t.SellIn - 1;
 
-                if (Items[i].SellIn < 0)
+                if (t.SellIn < 0)
                 {
-                    if (Items[i].Name == "Regular ticket to a TAFKAL80ETC concert")
-                    {
-                        Items[i].Quality = 0;
-                    }
+                    if (t.Name == "Regular ticket to a TAFKAL80ETC concert") t.Quality = 0;
 
-                    if (Items[i].Name != "Aged Brie")
+                    if (t.Name != "Aged Brie")
                     {
-                        if (Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
+                        if (t.Name != "Backstage passes to a TAFKAL80ETC concert")
                         {
-                            if (Items[i].Quality > 0)
-                            {
-                                if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-                                {
-                                    Items[i].Quality = Items[i].Quality - 1;
-                                }
-                            }
+                            if (t.Quality > 0)
+                                if (t.Name != "Sulfuras, Hand of Ragnaros")
+                                    t.Quality = t.Quality - 1;
                         }
                         else
                         {
-                            Items[i].Quality = Items[i].Quality - Items[i].Quality;
+                            t.Quality = t.Quality - t.Quality;
                         }
 
-                        if (Items[i].Name is "Regular ticket to a TAFKAL80ETC concert" or "Backstage passes to a TAFKAL80ETC concert")
-                        {
-                            itemsToRemove.Add(Items[i]);
-                        }   
+                        if (t.Name is "Regular ticket to a TAFKAL80ETC concert" or
+                            "Backstage passes to a TAFKAL80ETC concert") itemsToRemove.Add(t);
                     }
                     else
                     {
-                        if (Items[i].Quality < 50)
-                        {
-                            Items[i].Quality = Items[i].Quality + 1;
-                        }
+                        if (t.Quality < 50) t.Quality = t.Quality + 1;
                     }
                 }
             }
 
-            foreach (var item in itemsToRemove)
-            {
-                Items.Remove(item);
-            }
+            foreach (var item in itemsToRemove) _items.Remove(item);
         }
     }
 }
