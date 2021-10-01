@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using GildedRoseKata;
 using Xunit;
 
@@ -10,8 +11,10 @@ namespace tests
         public void Test1()
         {
             var list = GenerateItems();
-            
-            Assert.True(true);
+            var gildedRose = new GildedRose(list);
+            Assert.Equal(6,list.First().Quality);
+            gildedRose.UpdateQuality();
+            Assert.Equal(4,list.First().Quality);
         }
 
         private IList<Item> GenerateItems()
