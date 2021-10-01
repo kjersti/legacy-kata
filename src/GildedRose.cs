@@ -64,6 +64,11 @@ namespace GildedRoseKata
 
                 if (Items[i].SellIn < 0)
                 {
+                    if (Items[i].Name == "Regular ticket to a TAFKAL80ETC concert")
+                    {
+                        Items[i].Quality = 0;
+                    }
+
                     if (Items[i].Name != "Aged Brie")
                     {
                         if (Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
